@@ -1,5 +1,11 @@
 
-module Brewery
+class Brewery
+  attr_accessor :beers
+
+  def initialize
+    self.beers = Array.new
+    super
+  end
 
   # :stopdoc:
   LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
