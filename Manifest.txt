@@ -1,0 +1,8 @@
+History.txt
+Manifest.txt
+README.md
+Rakefile
+version.txt
+bin/brewery
+lib/brewery.rb
+spec/brewery_spec.rb
