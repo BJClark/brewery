@@ -65,3 +65,5 @@ end  # module Brewery
 
 Brewery.require_all_libs_relative_to(__FILE__)
 
+class BreweryError < StandardError; end
+class BreweryException < Exception; end
