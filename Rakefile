@@ -3,6 +3,7 @@ require 'isolate'
 Isolate.now! :system => false
 
 $:.unshift(File.dirname(__FILE__) + "/lib")
+
 require 'brewery'
 
 begin
@@ -13,9 +14,13 @@ end
 
 
 require 'spec/rake/spectask'
+require 'spec/autorun'
+
 
 Spec::Rake::SpecTask.new do |t|
   t.warning = true
+  t.libs << 'lib'
+  t.libs << 'spec'
 end
 
 task :default => 'spec'
