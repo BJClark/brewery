@@ -1,4 +1,3 @@
-
 class Brewery
   attr_accessor :beers
 
@@ -10,7 +9,7 @@ class Brewery
   # :stopdoc:
   LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
   PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
-  VERSION = ::File.read(PATH + 'version.txt').strip
+  VERSION = '0.0.1'
   # :startdoc:
 
   # Returns the library path for the module. If any arguments are given,
