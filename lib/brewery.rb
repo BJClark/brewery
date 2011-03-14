@@ -1,3 +1,5 @@
+require 'activesupport'
+
 class Brewery
   attr_accessor :beers
 

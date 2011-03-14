@@ -1,9 +1,4 @@
-
-require File.join(File.dirname(__FILE__), %w[spec_helper])
-
-class Brewery::Beer
-  
-end
+require File.join(File.dirname(__FILE__), "spec_helper")
 
 describe Brewery do
   let(:brewery) { Brewery.new }
