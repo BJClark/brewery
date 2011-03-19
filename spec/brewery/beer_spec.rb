@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__), "/../spec_helper")
 
 describe Brewery::Beer do
-  let(:beer) {Brewery::Beer.new}
+  let(:beer) {Brewery::Beer.new(:boil_length => 60, :boil_volume => 5)}
 
   it "should have hops" do
     beer.hops.should == []
@@ -18,8 +18,8 @@ describe Brewery::Beer do
       beer.ibu.should == 0
     end
     it "should collect the IBU of the indiviual hops" do
-      beer.hops << Brewery::Hop.new
-      beer.ibu.should == 1
+      beer.hops << Brewery::Hop.new(:aau => 10, :weight_in_grams => 15, :boil_length => 60)
+      beer.ibu.should be_close 15, 1
     end
   end
 
@@ -33,11 +33,16 @@ describe Brewery::Beer do
   end
 
   it "should have a boil length" do
-    beer.boil_length.should == 60.minutes.seconds
+    beer.boil_length.should == 60
   end
 
   it "should have a boil volume" do
     beer.boil_volume.should == 5
+  end
+
+  it "should calculate the boil volume from gallons to litres" do
+    beer.boil_volume = 5
+    beer.boil_volume_in_liters.should be_close 18.9, 0.1
   end
 
 end
